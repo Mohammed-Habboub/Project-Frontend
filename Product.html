@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!--<link href="css/details.css" rel="stylesheet" />-->
+    <link href="datatables.min.css" rel="stylesheet" />
+    <script src="js/Shose.js"></script>
+    <title>Product</title>
+    <style>
+        body {
+            background: #333;
+            color: #fff;
+            font-family: sans-serif;
+        }
+
+        th {
+           
+            vertical-align:middle;
+            align-items:center;
+        }
+        td{
+            vertical-align:middle;
+        }
+        rt {
+           align-items:center;
+        }
+        .form-control {
+            border: none;
+            background-color: #444;
+            color: #fff;
+        }
+
+        .form-control:focus {
+            background: #000;
+            transform: scale(1.1);
+            color: #fff;
+        }
+        button:hover{
+            letter-spacing:3px;
+        }
+       
+    </style>
+
+
+</head>
+<body>
+    <!--MODEL add  -->
+    <div class="modal fade" id="addmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add New Product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formadd">
+                        <div class="d-flex m-2 row mb-3">
+                            <label for="Shoesimg" class="form-label me-2 text-dark fw-bold ">Shoes image </label>
+                            <input type="text" class="form-control rounded-pill" id="img" placeholder="Enter image" >
+                        </div>
+                        <div class="d-flex m-2 row mb-3">
+                            <label for="ShoesID" class="form-label me-2 text-dark fw-bold">Shoes_ID </label>
+                            <input type="number" class="form-control rounded-pill" id="shoesid" placeholder="Enter number" >
+                        </div>
+                        <div class="d-flex m-2 row mb-3">
+                            <label for="ShoesDescription" class="form-label me-2 text-dark fw-bold">Shoes_Discription</label>
+                            <input type="text" class="form-control rounded-pill" id="shoesdisc" placeholder="Enter a discription for shoes" >
+                        </div>
+                        <div class="d-flex m-2 row mb-3">
+                            <label for="companyname" class="form-label me-2 text-dark fw-bold"> Company Name  </label>
+                            <input type="text" class="form-control rounded-pill" id="CompanyName" placeholder="Enter a Company name" >
+                        </div>
+                        <div class="d-flex m-2 row mb-3">
+                            <label for="price" class="form-label me-2 text-dark fw-bold">Price </label>
+                            <input type="text" class="form-control rounded-pill" id="price" placeholder="Enter a shoes Price" >
+                        </div>
+                        <button type="submit" class="btn btn-secondary rounded-3">Save changes</button>
+                    </form>
+                </div>
+                <div class="modal-footer " style=" background: #f57320;">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--MODELedit-->
+    <div class="modal fade" id="editmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" id="conedit">
+                <div class="modal-header">
+                    <h5 class="modal-title" data-bs-dismiss="modal">Edite Shoes Info</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formedit">
+                        <div class="d-flex m-2 row mb-3">
+                            <label for="Shoesimg" class="form-label me-2 text-dark fw-bold">Shoes image </label>
+                            <input type="text" class="form-control rounded-pill"  id="imgedit" placeholder="Enter image">
+                        </div>
+                        <div class="d-flex m-2 row mb-3">
+                            <label for="ShoesID" class="form-label me-2 text-dark fw-bold">Shoes_ID </label>
+                            <input type="number" class="form-control rounded-pill" id="shoesidedit" placeholder="Enter number">
+                        </div>
+                        <div class="d-flex m-2 row mb-3">
+                            <label for="ShoesDescription" class="form-label me-2 text-dark fw-bold">Shoes_Discription</label>
+                            <input type="text" class="form-control rounded-pill" id="shoesdiscedit" placeholder="Enter a discription for shoes">
+                        </div>
+                        <div class="d-flex m-2 row mb-3">
+                            <label for="companyname" class="form-label me-2 text-dark fw-bold"> Company Name  </label>
+                            <input type="text" class="form-control rounded-pill" id="CompanyNameedit" placeholder="Enter a Company name">
+                        </div>
+                        <div class="d-flex m-2 row mb-3">
+                            <label for="price" class="form-label me-2 text-dark fw-bold">Price </label>
+                            <input type="text" class="form-control rounded-pill" id="priceedit"  placeholder="Enter a shoes Price">
+                        </div>
+                        <button id="btnsave" type="submit" class="btn btn-secondary ">Save changes</button>
+
+                    </form>
+                </div>
+                <div class="modal-footer " style=" background: #f57320;">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--1 table-->
+    <div class="container">
+        <div class=" mt-3 mb-5 p-3 text-center rounded-3" style=" background: #f57320;"> <h1>Shoes products</h1> </div>
+    </div>
+    <div class="container">
+        <!--1 table-->
+        <button id="btnadd" class="btn btn-secondary text-white  mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:10%; background: #f57320;">
+
+            <img src="images/Untitled-2.png" class="m-0 p-0" style="width:15Px"/> ADD
+        </button>
+        <div id="con">
+            <table id="example" class="display table  table-hover  table-light   text-center " width="100%">
+                <!--table-striped-->
+                <thead>
+                    <tr>
+                        <th>SHOES</th>
+                        <th>ID</th>
+                        <th>DISCRIPTION</th>
+                        <th>COMPANY NAME</th>
+                        <th>PRICE</th>
+                        <th>PRICE</th>
+                    </tr>
+                </thead>
+                <!--<tbody id="tbody">
+                </tbody>-->
+            </table>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="datatables.min.js"></script>
+    <script>
+        again();
+        function again() {
+
+            $(document).ready(function () {
+                $('#example').DataTable({
+                    data: shoes,
+                    // #example هدا الاي دي نفس التابل
+                    columns: [
+                        {
+                            data: 'SHOES', render(data, type, row) { return ` <img src="${data}" style="width:110px; height:110px;" class="rounded-circle"/>` }
+                        },
+                        { data: 'ID' },
+                        { data: 'DISCRIPTION' },
+                        { data: 'COMPANY NAME' },
+                        { data: 'PRICE' },
+                        {
+                            title: 'DELETE_EDITE', data: 'ID', render(data, type, row) {
+                                return ` <div class=" m-1">
+                                                     <button id="btndel" class="btn   text-white " onclick="del(${data})"style=" background: #f57320;" >Delete</button>
+                                                     <button type="button"  class="btn  text-white" onclick="ed(${data}) "style=" background: #f57320;"> Edite</button>
+                                                      </div>`
+                            }
+                        },
+
+                    ]
+                });
+            })
+        }
+       
+        //var btnadd = document.getElementById('btnadd');
+        /////var btnadd = document.getElementById('btnadd');
+        //var btnsave = document.getElementById('btnsave');
+
+
+
+        function editfun() {
+            var c = document.getElementById('editmodal');
+            var mymodel = new bootstrap.Modal(c, { keyboard: true });
+            mymodel.show();
+        };
+        function addfun() {
+            var c = document.getElementById('addmodal');
+            var mymodel = new bootstrap.Modal(c, { keyboard: true });
+            mymodel.show();
+        };
+        var conedit = document.getElementById('conedit');
+        var formadd = document.getElementById('formadd');
+        var btnadd = document.getElementById('btnadd');
+        var addmodal = document.getElementById('addmodal');
+        var editmodal = document.getElementById('editmodal');
+        var formedit = document.getElementById('formedit');
+
+        //
+        btnadd.addEventListener('click', add);
+        function add() {
+            addfun()
+        }
+        formadd.addEventListener('submit', add2);
+        function add2(event) {
+
+            var img = document.getElementById('img').value;
+            var shoesid = document.getElementById('shoesid').value;
+            var shoesdisc = document.getElementById('shoesdisc').value;
+            var CompanyName = document.getElementById('CompanyName').value;
+            var price = document.getElementById('price').value;
+
+
+
+            shoes.push({ "SHOES": 'img', "ID": shoesid, "DISCRIPTION": shoesdisc, "COMPANY NAME": CompanyName, "PRICE": price });
+            con.innerHTML = '';
+
+            con.innerHTML = ` <table id="example" class="display table  table-hover  table-light   text-center " width="100%">
+                <!--table-striped-->
+                <thead>
+                    <tr>
+                        <th>SHOES</th>
+                        <th>ID</th>
+                        <th>DISCRIPTION</th>
+                        <th>COMPANY NAME</th>
+                        <th>PRICE</th>
+                        <th>PRICE</th>
+                    </tr>
+                </thead>               
+            </table>`
+            again()
+
+            event.preventDefault()
+            event.stopPropagation()
+        }
+        
+        var table = document.getElementById('example');
+        var imgedit = document.getElementById('imgedit');
+        var shoesidedit = document.getElementById('shoesidedit');
+        var shoesdiscedit = document.getElementById('shoesdiscedit');
+        var CompanyNameedit = document.getElementById('CompanyNameedit');
+        var priceedit = document.getElementById('priceedit');
+        var con = document.getElementById('con')
+        var imgedit = document.getElementById('imgedit')
+        
+        function ed(ID) {
+
+            for (var i = 0; i < shoes.length; i++) {
+
+
+                if (shoes[i].ID == ID) {
+
+                    imgedit.value = shoes[i].SHOES;
+                    shoesidedit.value = shoes[i].ID;
+                    shoesdiscedit.value = shoes[i].DISCRIPTION;
+                    CompanyNameedit.value = shoes[i]["COMPANY NAME"];
+                    priceedit.value = shoes[i].PRICE;
+               
+
+                    //img = `< img src = "${shoes[i].img}" />`;
+
+                    localStorage.setItem('2', i);
+                }
+            }
+            editfun();
+        }
+        formedit.addEventListener('submit', edit2);
+
+        function edit2(event) {
+
+            shoes[localStorage.getItem('2')].ID = shoesidedit.value;
+            shoes[localStorage.getItem('2')].DISCRIPTION = shoesdiscedit.value;
+
+            shoes[localStorage.getItem('2')]["COMPANY NAME"] = CompanyNameedit.value;
+            shoes[localStorage.getItem('2')].PRICE = priceedit.value;
+
+            con.innerHTML = '';
+
+            con.innerHTML = ` <table id="example" class="display table  table-hover  table-light   text-center " width="100%">
+                <thead>
+                    <tr>    
+                        <th>SHOES</th>
+                        <th>ID</th>
+                        <th>DISCRIPTION</th>
+                        <th>COMPANY NAME</th>
+                        <th>PRICE</th>
+                        <th>PRICE</th>
+                    </tr>
+                </thead>
+             
+            </table>`
+            again()
+            event.preventDefault()
+            event.stopPropagation()
+        }
+
+        //
+        function del(ID) {
+            for (var i = 0; i < shoes.length; i++) {
+                if (shoes[i].ID == ID) {
+                    shoes.splice(i, 1);
+                }
+
+            }
+            document.getElementById('con').innerHTML = '';
+            document.getElementById('con').innerHTML = `<table id="example" class="display table table-striped table-hover ms-auto bg-light" width="100%"></table>`;
+            again();
+        }
+
+
+        //validationadd
+
+        var formadd = document.getElementById('formadd');
+
+        formadd.addEventListener('submit', function (Event) {
+
+            if (!formadd.checkValidity()) {
+                Event.preventDefault();
+                Event.stopPropagation();
+            }
+            formadd.classList.add('was-validated');
+
+        });
+        //validationadd
+
+        var formedit = document.getElementById('formedit');
+
+        formedit.addEventListener('submit', function (Event) {
+
+            if (!formedit.checkValidity()) {
+                Event.preventDefault();
+                Event.stopPropagation();
+            }
+            formedit.classList.add('was-validated');
+
+        });
+
+        //update
+        //function edit(ID) {
+        //    for (var i = 0; i < shoes.length; i++) {
+        //        if (shoes[i].ID == ID) {
+        //            shoes[i].SHOES = img.value;
+        //            shoes[i].ID=shoesid.value ;
+        //            shoes[i].DISCRIPTION=shoesdisc.value ;    
+        //            shoes[i]["COMPANY NAME"]=CompanyName.value ;
+        //            shoes[i].PRICE = price.value;
+
+        //            img = `< img src = "${DataBase[i].img}" />`;
+
+        //            localStorage.setItem('2', i);
+        //        }
+
+        //    }
+
+        //}
+        //btnsave.addEventListener('submit', function () {
+        //    for (var i = 0; i < shoes.length; i++) {
+        //        if (shoes[i].ID == ID) {
+        //            img.value = shoes[i].SHOES;
+        //            shoesid.value = shoes[i].ID;
+        //            shoesdisc.value = shoes[i].DISCRIPTION;
+        //            CompanyName.value = shoes[i]["COMPANY NAME"];
+        //            price.value = shoes[i].PRICE;
+        //        }
+        //    }
+
+        //    document.getElementById('con').innerHTML = '';
+        //    document.getElementById('con').innerHTML = `<table id="example" class="display table table-striped table-hover ms-auto bg-light" width="100%"></table>`;
+        //    again();
+        //});
+        //btnsave.onclick =function edit2(ID) {
+        //    for (var i = 0; i < shoes.length; i++) {
+        //        if (shoes[i].ID == ID) {
+        //            shoes[i].SHOES=  img.value ;
+        //            shoes[i].ID=shoesid.value ;
+        //            shoes[i].DISCRIPTION=shoesdisc.value ;
+        //            shoes[i]["COMPANY NAME"]=CompanyName.value ;
+        //            shoes[i].PRICE=price.value;
+        //        }
+        //     }
+
+        //     document.getElementById('con').innerHTML = '';
+        //     document.getElementById('con').innerHTML = `<table id="example" class="display table table-striped table-hover ms-auto bg-light" width="100%"></table>`;
+        //     again();
+        //}
+
+        ////delete function
+       
+       //========================
+        //btnsave.onclick = function () {
+        //    let newpro = {
+        //        img: img.value,
+        //        shoesid: shoesid.value,
+        //        shoesdisc: shoesdisc.value,
+        //        CompanyName: CompanyName.value,
+        //        price: price.value,
+        //    }
+        //    shoes.push(newpro);
+        //    localStorage.setItem('product', JSON.stringify(shoes)); //JSON.stringify(datapro) //المدخل التاني لازم يكون نص عشان كدا ما بنحط الاري لازم نحول
+        //    //console.log(newpro);
+        //    //clearData()
+        //    // showData()
+        //}
+        //var selectedrow = null;
+        //function onfFormSubmit(){
+        //    event.preventDefault();
+        //    var formData = readfromdata();
+
+        //        insertnewrecord(formData);
+
+
+        //}
+        ////Retrieve tha data
+        //function readfromdata() {
+
+        //    var formdata = {};
+        //    formdata["img"] = document.getElementById('img').value;
+        //    formdata["shoesid"] = document.getElementById('shoesid').value;
+        //    formdata["shoesdisc"] = document.getElementById('shoesdisc').value;
+        //    formdata["CompanyName"] = document.getElementById('CompanyName').value;
+        //    formdata["price"] = document.getElementById('price').value;
+        //    return formdata;
+        //}
+        ////insert  the data
+        //function insertnewrecord(data) {
+        //    var tbl = document.getElementById('example').getElementsByTagName('table')[0];
+        //    var newrow = tbl.insertRow(tbl.length);
+        //    var cel1 = newrow.insertCell(0);
+        //    cel1.innerHTML = data.img;
+        //    var cel2 = newrow.insertCell(1);
+        //    cel2.innerHTML = data.shoesid;
+        //    var cel3 = newrow.shoesdisc(2);
+        //    cel3.innerHTML = data.DISCRIPTION;
+        //    var cel4 = newrow.insertCell(3);
+        //    cel4.innerHTML = data.CompanyName;
+        //    var cel5 = newrow.insertCell(4);
+        //    cel5.innerHTML = data.price;
+        //    var cel6 = newrow.insertCell(6);
+        //    cel5.innerHTML = `<button id="btndel" class="btn btn-danger  text-white " onclick="dele(${data})" >Delete</button>
+        //     <button type="button"  class="btn btn-success text-white" data-bs-toggle="modal" data-bs-target="#exampleModal"> Edite</button>`
+        //}
+
+        ////EDIT THA DETA
+        //function Edit(td) {
+
+        //}
+
+        //////console.log(btndel);
+
+        ////if (localStorage.product != null) {
+        ////   shoes = JSON.parse(localStorage.product)
+        ////} else { shoes = []; }
+
+        //btnsave.onclick = function () {
+        //    let newpro = {
+        //        img: img.value,
+        //        shoesid: shoesid.value,
+        //        shoesdisc: shoesdisc.value,
+        //        CompanyName: CompanyName.value,
+        //        price: price.value,
+        //    }
+        //    shoes.push(newpro);
+        //    localStorage.setItem('product', JSON.stringify(shoes)); //JSON.stringify(datapro) //المدخل التاني لازم يكون نص عشان كدا ما بنحط الاري لازم نحول
+        //    //console.log(newpro);
+        //    //clearData()
+        //    // showData()
+        //}
+
+
+
+        //function clearData() {
+        //    img.value = '';
+        //    shoesid.value = '';
+        //    shoesdisc.value = '';
+        //    CompanyName.value = '';
+        //    price.value = '';
+        //}
+        ////
+        //function showData() {
+        //    let tbl = '';
+        //    for (let i = 0; i < shoes.length; i++) {
+        //        tbl += `
+        //                       <tr>
+        //                        <td>${shoes[i].SHOES}</td>
+        //                        <td>${shoes[i].ID}</td>
+        //                        <td>${shoes[i].DISCRIPTION}</td>
+        //                        <td>${shoes[i]["COMPANY NAME"]}</td>
+        //                        <td>${shoes[i].PRICE}</td>
+        //                       <td> <button id="btndel" class="btn btn-danger  text-white  " >Delete</button>
+        //                        <button type="button" onclick="deleetepro()" class="btn btn-success text-white" data-bs-toggle="modal" data-bs-target="#exampleModal"> Edite</button></td>
+
+        //                    </tr>
+        //                    `
+
+        //    }
+
+        //    document.getElementById('tbody').innerHTML = tbl;
+        //}
+        ////var tbody = document.getElementById('tbody');
+        ////showData() //الظهور بكل وقت
+
+
+
+    </script>
+</body>
+</html>

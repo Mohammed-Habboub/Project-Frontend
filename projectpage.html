@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>Faraday-Webflow Ecommerce Website template</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic%7CCabin:regular,500,600,700,italic,500italic,600italic,700italic%7CNunito:regular,italic,600,600italic,700,700italic,800,800italic" media="all">
+
+    <style>
+       * {
+           margin:0;
+           padding:0;
+           box-sizing: border-box;
+           font-size: 15px;
+           line-height: 24px;
+           font-family: Cabin, sans-serif;
+       }
+
+       .bg {
+           background-image: url('images/p1.jpg');
+           background-repeat: no-repeat;
+           background-size: cover;
+           width: 100%;
+           background-attachment: scroll;
+           background-position: center;
+       }
+
+       .links:link {
+           background-color: white;
+           color: black;
+           font-family: Cabin, sans-serif;
+       }
+
+       .links:hover {
+           background-color: orangered !important;
+           color: white !important;
+       }
+
+       #imagdiv {
+           width: 100%;
+       }
+
+      #imag3 {
+           width: 100%;
+       }
+
+       .img2 {
+           background-image: url('6039bc1873bb8389ecdf662b_[45]img_guarantee_promo_section_bg - Copy.jpg'); /*رجعععععع*/
+           background-repeat: no-repeat;
+           background-size: cover;
+           width: 100%;
+       }
+
+       .BG {
+           background-image: url('images/6039bc1873bb8389ecdf662b_[45]img_guarantee_promo_section_bg - Copy.jpg');
+           background-repeat: no-repeat;
+           background-size: cover;
+           width: 100%;
+           padding-top: 350px;
+           padding-bottom: 200px;
+           padding-left: 6%;
+           height: 50%;
+       }
+
+       .ff:hover {
+           background-color: orangered;
+           color: black;
+       }
+   
+       #linkorang:hover {
+           text-decoration: underline;
+       }
+
+       .top {
+           top: 5%;
+           right: 5%;
+       }
+
+       .linkpositio {
+           top: 5%;
+           right: 5%;
+       }
+
+           .linkpositio:hover {
+               color: white !important;
+               background-color: black !important;
+           }
+
+       .linkunderline:hover {
+           text-decoration-line: underline;
+       }
+
+       .linkcolor:hover {
+           color: orangered !important;
+       }
+
+       .imghover {
+           transition: transform 0.4s;
+       }
+
+        .imghover:hover {
+            transform: scale3d(1.1,1.1,1.1);
+        }
+        .detailsbox {
+            top: 30%;
+            bottom: 30%;
+            left: 27%;
+            right: 15%;
+           /* background-color: white;*/
+            /*border: 2px solid #808080;*/
+            opacity: 0;
+            transition: opacity 1.3s;
+        }
+
+            .detailsbox:hover {
+                opacity: 1;
+            }
+
+
+        /* @media (min-width:300px) and (max-width:705px){
+           .offcanvas offcanvas-end {
+               width:100%;
+           }
+
+              }
+        @media (min-width:992px) and (max-width:1500px) {
+            .offcanvas offcanvas-end {
+                width: 100%;
+            }
+        }*/
+       
+   </style>
+</head>
+<body>
+    <!--nav bar-->
+    <div class="container-fluid bg ">
+        <div class="row position-fixed " style=" z-index: 1500; width:100%;">
+            <header class="g-0 " style=" font-size: 11px; letter-spacing:4px;">
+                <p class=" text-white m-0 py-2 text-center fw-bold" style="background-color: #4ca2ac; font-size: 12px; ">FREE SHOPPING WORLED</p>
+            </header>
+            <nav class="navbar navbar-expand-md navbar-light  bg-light  m-0 " style=" width: 100%;">
+                <a href="projectpage.html" class="navbar-brand">FARADAY.SHOSE</a>
+                <!--<button class="navbar-toggler"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainnav">
+        <span class="navbar-toggler-icon"></span>
+    </button>-->
+                <div class="collapse navbar-collapse g-0">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item linkunderline"><a class="nav-link text-dark" href="#" style="font-size:14px;">SHOP</a></li>
+                        <li class="nav-item linkunderline"><a class="nav-link text-dark" href="#" style="font-size:14px;">GUARANTEE</a></li>
+                        <li class="nav-item linkunderline"><a class="nav-link text-dark" href="#" style="font-size:14px;">SHOPPING & RETURNS</a></li>
+                        <li class="nav-item linkunderline"><a class="nav-link text-dark" href="#" style="font-size:14px;">BLOG</a></li>
+                        <li class="nav-item linkunderline"><a class="nav-link text-dark" href="ABOUT.html" style="font-size:14px;">ABOUT</a></li>
+                        <li class="nav-item linkunderline"><a class="nav-link text-dark" href="Product.html" style="font-size:14px;">PRODUCT CURDS</a></li>
+
+                    </ul>
+                </div>
+                <!--////////////////////////menu-->
+                <div class="btn btn-white px-4 |" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class='bx bx-menu fs-4' style="vertical-align:middle;"></i>MENU </div>
+
+                <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="width:100%;">
+                    <div class="offcanvas-header ">
+
+                        <h4 id="offcanvasRightLabel" style="font-size:14px;">.</h4>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body ">
+                        <div class="container">
+                            <div class="row">
+                                <a href="projectpage.html" class="list-group-item list-group-item-action" aria-current="true" style="border: none; font-size: 22px; margin-left: 18px;">
+                                    FARADAY.SHOSE
+                                </a>
+                                <p style="margin-top: 150px; margin-bottom: 70px; margin-left: 22px;">MENU</p>
+                                <div class="col-lg-7">
+                                    <div class="list-group" style="margin-bottom:44px;">
+
+                                        <a href="#" class="list-group-item  fs-2 linkcolor" style="border:none;margin-bottom:22px;">SHOP PRODUCTS</a>
+                                        <a href="#" class="list-group-item  fs-2 linkcolor" style="border:none; margin-bottom:22px;">GUARANTEE</a>
+                                        <a href="#" class="list-group-item  fs-2 linkcolor" style="border:none; margin-bottom:22px;">SHOPPING & RETURNS</a>
+                                        <a href="ABOUT.html" class="list-group-item  fs-2 linkcolor" style="border:none; margin-bottom:22px;">ABOUT</a>
+                                        <p style="margin-bottom: 0px; padding-left: 14px; color: #555; font-size: 13px;">Free shipping worldwide</p>
+                                        <div class="d-flex">
+                                            <p style="margin-bottom: 0px; padding-left:14px; color: #555; font-size: 13px;" class="pe-3">
+                                                Payment methods we accept
+                                            </p><i class='bx bxl-visa fs-3 ' style='color:#fffdfd; background-color:#808080;'></i><i class='bx bxl-paypal fs-3 px-3' style='color:#7e7c7c'></i>
+                                        </div>
+                                        <p style="margin-bottom: 0px; padding-left: 14px; color: #555; font-size: 13px;">Powered by<a href="https://webflow.com/" style="text-decoration:none; color:black;">Webflow</a> </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 ps-3">
+                                    <div class="list-group">
+
+                                        <a href="#" class="list-group-item linkcolor" style="border: none; margin-bottom: 22px;">Privacy Policy</a>
+                                        <a href="#" class="list-group-item linkcolor" style="border: none; margin-bottom: 22px;">Terms & Condition</a>
+                                        <a href="#" class="list-group-item linkcolor" style="border:none;">Contact</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--cart-->
+               
+
+            </nav>
+      </div>
+        <!--1111-->
+        <div  style=" padding-top: 250px; padding-bottom: 100px; padding-left: 6%;">
+            <div class="row text-white">
+                <div class="col-lg-4 fw-bold lh-lg">
+                    <p>WEBFLOW TEMPLATE</p>
+                    <h1 style="font-size:56px;">DESIGNED FOR THE FREEDOM TO WALK</h1>
+                </div>
+                <div class="row d-flex justify-content-between">
+                    <div class="col-lg-6  ">
+                        <p style="font-size:17px;">Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="#boot" class=" bg-white text-decoration-none d-block but w-but  text-center text-dark p-3  links rounded" style="width:150px; position:absolute; right:88px;">SHOP NOW</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--2222222222222222 text-->
+    <div class="container">
+        <div class="row text-center justify-content-center " style="margin-top:90px; margin-bottom:90px;">
+            <div class="col-lg-6 ">
+
+                <h4 class="text-uppercase my-3" style="font-size:14px;">
+                    Our Bestsellers
+                </h4>
+                <div class="title-line"></div>
+                <h2 class="fw-bold">A difference you can feel in your sole</h2>
+                <p>
+                    Nam imperdiet arcu velit, ut maximus mauris finibus ac. Proin non fringilla sapien. Pellentesque euismod a ligula vitae bibendum. Nulla facilisi. Praesent sed tortor Donec mollis ultrices dui, eu blandit dolor dapibus nec.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--3333333333333333333 الاربع صور-->
+    <div class="container ">
+        <div class="row " id="boot">
+            <div class="col-md-6 col-lg-6  position-relative ">
+                <a href="https://faraday-template.webflow.io/product/fs-05-premium-sports" class=" text-decoration-none text-white btn btn-dark position-absolute top rounded-circle p-3">Sale!</a>
+
+                <img id="imagdiv" src="https://assets.website-files.com/6039bc1873bb835a32df6639/603a1dbffa052da6832a837b_5ff210cfb1ab6d821335143e_%5B7%5Dthumb_shoe_5.jpg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 47vw, (max-width: 991px) 48vw, 46vw" srcset="https://assets.website-files.com/6039bc1873bb835a32df6639/603a1dbffa052da6832a837b_5ff210cfb1ab6d821335143e_%5B7%5Dthumb_shoe_5-p-800.jpeg 800w, https://assets.website-files.com/6039bc1873bb835a32df6639/603a1dbffa052da6832a837b_5ff210cfb1ab6d821335143e_%5B7%5Dthumb_shoe_5.jpg 1000w" class="product-thumbnail " style="">
+                <p>F5 04 Premium Sports</p>
+                <p style="font-size:14PX; color:#6d6d6d;">$99.00 USD &nbsp; <span style="color: red; font-size: 11PX; "><del>$198.00 USD</del></span></p>
+
+
+            </div>
+            <div class="col-md-6 col-lg-6 ">
+
+                <img id="imagdiv" src="https://assets.website-files.com/6039bc1873bb835a32df6639/603a1c5de2a6194886ceb747_5fe2d084a0a6167fc32bfdd6_%5B4%5Dthumb_shoe_2_copy.jpg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 47vw, (max-width: 991px) 48vw, 46vw" srcset="https://assets.website-files.com/6039bc1873bb835a32df6639/603a1c5de2a6194886ceb747_5fe2d084a0a6167fc32bfdd6_%5B4%5Dthumb_shoe_2_copy-p-800.jpeg 800w, https://assets.website-files.com/6039bc1873bb835a32df6639/603a1c5de2a6194886ceb747_5fe2d084a0a6167fc32bfdd6_%5B4%5Dthumb_shoe_2_copy.jpg 1000w" class="product-thumbnail" style="">
+                <p>F5 02 Premium Sports</p>
+                <p style="font-size:14PX; color:#6d6d6d;">$99.00 USD &nbsp; </p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container  my-5">
+        <div class="row">
+            <div class=" col-md-6 col-lg-6 position-relative">
+                <a href="https://faraday-template.webflow.io/product/fs-04-premium-sneakers" class=" text-decoration-none text-white btn btn-dark position-absolute top rounded-circle p-3">Sale!</a>
+
+                <img id="imagdiv" src="https://assets.website-files.com/6039bc1873bb835a32df6639/603a1d0296647108d0d50eb7_5fe2d18211d5956a544b20a8_%5B6%5Dthumb_shoe_4.jpg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 47vw, (max-width: 991px) 48vw, 46vw" srcset="https://assets.website-files.com/6039bc1873bb835a32df6639/603a1d0296647108d0d50eb7_5fe2d18211d5956a544b20a8_%5B6%5Dthumb_shoe_4-p-800.jpeg 800w, https://assets.website-files.com/6039bc1873bb835a32df6639/603a1d0296647108d0d50eb7_5fe2d18211d5956a544b20a8_%5B6%5Dthumb_shoe_4.jpg 1000w" class="product-thumbnail" style="">
+                <p>F5 04 Premium Sneakers</p>
+                <p style="font-size:14PX; color:#6d6d6d;">$99.50 USD &nbsp; <span style="color: red; font-size: 11PX; "><del>$199.50 USD</del></span></p>
+
+
+            </div>
+            <div class="col-md-6 col-lg-6 position-relative">
+                <a href="https://faraday-template.webflow.io/product/fs-01-premium-sneakers" class=" text-decoration-none text-white btn btn-dark position-absolute top rounded-circle p-3">Sale!</a>
+
+                <img id="imagdiv" src="https://assets.website-files.com/6039bc1873bb835a32df6639/603a1c4a1be19f09747bd86b_5fe2d16ad047858788c6f66c_%5B3%5Dthumb_shoe_1.jpg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 47vw, (max-width: 991px) 48vw, 46vw" srcset="https://assets.website-files.com/6039bc1873bb835a32df6639/603a1c4a1be19f09747bd86b_5fe2d16ad047858788c6f66c_%5B3%5Dthumb_shoe_1-p-800.jpeg 800w, https://assets.website-files.com/6039bc1873bb835a32df6639/603a1c4a1be19f09747bd86b_5fe2d16ad047858788c6f66c_%5B3%5Dthumb_shoe_1.jpg 1000w" class="product-thumbnail" style="">
+                <p>F5 02 Premium Sneakers</p>
+                <p style="font-size:14PX; color:#6d6d6d;">$134.00 USD &nbsp; <span style="color: red; font-size: 11PX; "><del>$269.00 USD</del></span></p>
+
+
+            </div>
+        </div>
+    </div>
+    <!--44444444444 bg image 2-->
+    <div class="container-fluid lh-lg " style="background-image: url('https://assets.website-files.com/6039bc1873bb83665bdf6605/6039bc1873bb8389ecdf662b_%5B45%5Dimg_guarantee_promo_section_bg.jpg'); height: 74vh; width: 100%; background-size: cover; background-attachment: scroll; background-position: center;">
+        <div style=" padding-top:100px; padding-left: 6%;">
+            <div class="row text-white ">
+                <div class="col-lg-4 lh-lg">
+                    <p>SPRING SALE</p>
+                    <h2 class="fw-500 my-4 " style="font-size:55px;">50% OFF!</h2>
+                    <p style="font-size:17px;" class="lh-lg">Suspendisse at ornare arcu. Suspendisse potenti. Nam fermentum velit eu erat tincidunt, at consequat erat pulvinar. Nunc consequat sit amet metus sed ultrices.</p>
+                </div>
+                <div class="col-md-12">
+                    <a href="https://faraday-template.webflow.io/shop" class=" bg-white text-decoration-none d-block but w-but rounded text-center text-dark p-3  links" style="width:150px;">SHOP NOW</a>
+                    <!--<a href="#" class="bg-white text-dark bg-white text-decoration-none d-block but w-but link rounded text-center  p-3" style="width:10%;"></a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--55555555555 text-->
+    <div class="container">
+        <div class="row text-center  justify-content-center " style="margin-top:90px; margin-bottom:90px;">
+            <div class="col-lg-6 ">
+
+                <h4 style="font-size:14px;">
+                    SHOP BY CATEGORYc
+                </h4>
+                <div class="title-line"></div>
+                <h2 class="fw-bold">Get a new leap of comfortable</h2>
+                <p>
+                    Nam imperdiet arcu velit, ut maximus mauris finibus ac. Proin non fringilla sapien. Pellentesque euismod a ligula vitae bibendum. Nulla facilisi. Praesent sed tortor Donec mollis ultrices dui, eu blandit dolor dapibus nec.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!--66666666666666 linkposition-->
+    <div class="container-fluid  px-4">
+        <div class="row justify-content-center g-4">
+
+            <div class="col-lg-4 imghover  text-center position-relative ">
+                <div class="border border-Secondary">
+                    <img id="imag3" src="https://assets.website-files.com/6039bc1873bb835a32df6639/6039c05a9fd7466e18b06298_category-sports-thumb-thumb.jpg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 991px) 76vw, 30vw" srcset="https://assets.website-files.com/6039bc1873bb835a32df6639/6039c05a9fd7466e18b06298_category-sports-thumb-thumb-p-1080.jpeg 1080w, https://assets.website-files.com/6039bc1873bb835a32df6639/6039c05a9fd7466e18b06298_category-sports-thumb-thumb.jpg 1600w" class="category-thumbnail" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                    <h4 class="pt-4">SPORTS</h4>
+                    <p class="pb-4">STATING AT <span style="color:red;">$134.50 USD</span></p>
+                    <div>
+                        <a href="https://faraday-template.webflow.io/category/sports" class=" bg-white text-decoration-none d-block but w-but rounded text-center text-dark p-3 position-absolute linkpositio " style="width:150px;">SHOP SPORT</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 imghover   text-center position-relative">
+                <div class="border border-Secondary">
+                    <img id="imag3" src="https://assets.website-files.com/6039bc1873bb835a32df6639/6039c10db4131366c2ea3407_category-casuals-thumb-thumb.jpg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 991px) 76vw, 30vw" srcset="https://assets.website-files.com/6039bc1873bb835a32df6639/6039c10db4131366c2ea3407_category-casuals-thumb-thumb-p-800.jpeg 800w, https://assets.website-files.com/6039bc1873bb835a32df6639/6039c10db4131366c2ea3407_category-casuals-thumb-thumb-p-1080.jpeg 1080w, https://assets.website-files.com/6039bc1873bb835a32df6639/6039c10db4131366c2ea3407_category-casuals-thumb-thumb.jpg 1600w" class="category-thumbnail" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                    <h4 class="pt-4">CASUALS</h4>
+                    <p class="pb-4">STATING AT <span style="color:red;">$269.00 USD</span></p>
+                    <a href="https://faraday-template.webflow.io/category/casuals" class=" bg-white text-decoration-none d-block but w-but rounded text-center text-dark p-3 position-absolute linkpositio " style="width:150px;">SHOP CASUALS</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 imghover  text-center position-relative">
+                <div class="border border-Secondary">
+                    <img id="imag3" src="https://assets.website-files.com/6039bc1873bb835a32df6639/6039c2ff9da734bc66e04ed6_category-sneakers-thumb-thumb.jpg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 991px) 76vw, 30vw" srcset="https://assets.website-files.com/6039bc1873bb835a32df6639/6039c2ff9da734bc66e04ed6_category-sneakers-thumb-thumb-p-1080.jpeg 1080w, https://assets.website-files.com/6039bc1873bb835a32df6639/6039c2ff9da734bc66e04ed6_category-sneakers-thumb-thumb.jpg 1600w" class="category-thumbnail" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                    <h4 class="pt-4">SNAKERS</h4>
+                    <p class="pb-4">STATING AT <span style="color:red;">$199.00 USD </span></p>
+                    <a href="https://faraday-template.webflow.io/category/sneakers" class=" bg-white text-decoration-none d-block but w-but rounded text-center text-dark p-3 position-absolute linkpositio " style="width:150px;">SHOP SNAKERS</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--7777777777777 text-->
+    <div class="container">
+        <div class="row text-center justify-content-center " style="margin-top:80px; margin-bottom:80px;">
+            <div class="col-lg-7 ">
+                <div class="title-line">
+                    <h4 style="font-size:14px;">
+                        FEATURES
+                    </h4>
+
+                    <h2 class="fw-bold my-3">Quality Begins on the Inside</h2>
+                    <p>
+                        Nam imperdiet arcu velit, ut maximus mauris finibus ac. Proin non fringilla sapien. Pellentesque euismod a ligula vitae bibendum. Nulla facilisi. Praesent sed tortor Donec mollis ultrices dui, eu blandit dolor dapibus nec.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--8888888888888 الصورة المعقدة-->
+    <div class="container">
+        <div class="row d-flex justify-content-center ">
+            <div class="col-lg-7  pnon">
+                <img src="./Faraday — Webflow Ecommerce website template_files/6039bc1873bb83964ddf6632_[13]img_features.jpg" loading="lazy" width="800" sizes="(max-width: 851px) 94vw, 800px" srcset="https://assets.website-files.com/6039bc1873bb83665bdf6605/6039bc1873bb83964ddf6632_%255B8%255Dimg_features-p-500.jpeg 500w, https://assets.website-files.com/6039bc1873bb83665bdf6605/6039bc1873bb83964ddf6632_%5B13%5Dimg_features.jpg 800w" alt="" class="features-image img-fluid">
+                <div class=" col-lg-7 text-center ">
+                    <i class='bx bx-plus rounded-circle fs-2 ' style='color: #f9f9f9; background-color: #f1674b;  padding: 10px; '></i>   <!--position: absolute; top: 22%; left: 14%;-->
+                    <!--<div class="col-lg-4 position-absolute" style="top:0%; left:0%;">-->
+                    <h4>Breathable Lightweight Upper</h4>
+                    <p style="color:#808080;">Vivamus tempor tellus ut enim feugiat suscipit. Phasellus elementum lectus est, non auctor lectus.</p>
+                    <!--</div>-->
+                </div>
+                <div class="col-lg-7 text-center ">
+                    <i class='bx bx-plus rounded-circle fs-2' style='color: #f9f9f9; background-color: #f1674b; padding: 10px; '></i>
+                    <h4>Ultra Durable Rubber Sole</h4>
+                    <p>Donec augue ipsum, condimentum vel turpis et, mollis tempus purus. Vestibulum cursus efficitur mauris convallis ac.</p>
+
+
+                </div>
+                <div class="col-lg-7 text-center ">
+                    <i class='bx bx-plus rounded-circle fs-2' style='color: #f9f9f9; background-color: #f1674b; padding: 10px; '></i>
+                    <h4>Designed Padded Insole</h4>
+                    <p>Donec augue ipsum, condimentum vel turpis et, mollis tempus purus. Vestibulum cursus efficitur mauris convallis ac.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Jumbotron -->
+    <!--background-->
+  <div class="container-fluid marginbackground" style="background-image: url('https://assets.website-files.com/6039bc1873bb83665bdf6605/603b12dbfa06bae794b3ea1b_%5B39%5Dimg_about_promo_section_bg.jpg'); height: 90vh; width: 93%; padding-top: 100px; padding-bottom: 200px; background-size: cover; background-attachment: scroll; background-position: center; ">
+     <div class="row px-5 py-5">
+       <div class="col-lg-5 text-white px-5 fw-bold lh-lg">
+          <p style="font-size:18px; text-transform:uppercase;"> offer</p>
+          <h2 class="mb-3 " style="font-size:40px;">Get 10% Off Your First Purchase</h2>
+          <p>
+              Subscribe to our newsletter and get 10% discount
+          </p>
+           <div class=" mb-3 py-4 px-4 "><!--input-group-->
+               
+             <form  id="email-form" name="email-form" data-name="Email Form" method="post" class="newsletter-form  ms-0">
+             <input type="email" style="text-transform: uppercase; width: 230px; font-size: 13px; " class="newsletter-email-field w-input bg-dark text-white p-2" maxlength="256" name="email-2" data-name="Email 2" placeholder="your email address" id="email-2" required="required">
+             <input type="submit" value="Get 10% Off" data-wait="Please wait..." class="newsletter-button w-button p-2 links" style=" width: 140px; text-transform: uppercase; margin-left:-2.8px; font-size: 13px;" >
+             </form>
+              
+           </div>
+           <!--<form>
+           </form>-->
+       </div>
+     </div>
+  </div>
+
+    <!--<div class="container BG bg-img d-flex" style="background-image:url(' ')">
+        <div class="row text-white">
+                <h2></h2>
+                <p></p>
+        </div>
+    </div>-->
+
+    <!--text....-->
+    <div class="container">
+        <div class="row text-center  justify-content-center  lh-lg" style="margin-top:90px; margin-bottom:45px;">
+            <div class="col-lg-6 ">
+                <div class="title-line">
+                    <h4 style="font-size:14px; ">
+                        RECENT POSTS
+                    </h4>
+
+                    <h2 class="fw-bold">From Our Blog</h2>
+                    <p>
+                        Nam imperdiet arcu velit, ut maximus mauris finibus ac. Proin non fringilla sapien. Pellentesque euismod a ligula vitae bibendum. Nulla facilisi <a id=" linkorang" href="#" class="text-decoration-none color" style="color: #f57f4b;">all posts</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5">
+        <div class="row justify-content-center g-4 py-5">
+
+            <div class="col-md-3 col-lg-3 m-2   position-relative  ">
+                <img id="imag3" src="https://assets.website-files.com/6039bc1873bb835a32df6639/6039bc1873bb83bc0adf6640_60365c36b2becc9d7359e583_post-1-thumb.jpeg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 64vw, (max-width: 991px) 31vw, 28vw" srcset="https://assets.website-files.com/6039bc1873bb835a32df6639/6039bc1873bb83bc0adf6640_60365c36b2becc9d7359e583_post-1-thumb-p-800.jpeg 800w, https://assets.website-files.com/6039bc1873bb835a32df6639/6039bc1873bb83bc0adf6640_60365c36b2becc9d7359e583_post-1-thumb.jpeg 800w" class="post-thumbnail" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                <p class="fw-600 mt-3" style="font-size:13px;">NEW ARRIVALS <span style="font-size:13px; color:#808080;">Feb 12,2021</span> </p>
+                <h4 class="card-title">7 Sneaker customs that should release officially</h4>
+                <div class=" position-absolute detailsbox text-center justify-content-center">
+                    <a href="https://faraday-template.webflow.io/blog-posts/7-sneaker-customs-that-should-release-officially" class=" bg-white text-decoration-none d-block but w-but rounded text-center text-dark p-3  linkpositio " style="width:180px;">READ MORE</a>
+
+                </div>
+
+            </div>
+            <div class="col-md-3 col-lg-3 m-2   position-relative ">
+                <img id="imag3" src="https://assets.website-files.com/6039bc1873bb835a32df6639/6039bc1873bb83434cdf6643_60365c36b2becc28f159e57f_post-2-thumb.jpeg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 64vw, (max-width: 991px) 31vw, 28vw" srcset="https://assets.website-files.com/6039bc1873bb835a32df6639/6039bc1873bb83434cdf6643_60365c36b2becc28f159e57f_post-2-thumb-p-800.jpeg 800w, https://assets.website-files.com/6039bc1873bb835a32df6639/6039bc1873bb83434cdf6643_60365c36b2becc28f159e57f_post-2-thumb.jpeg 800w" class="post-thumbnail" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                <p class="fw-600 mt-3" style="font-size:13px;">FASHON <span style="font-size:13px; color:#808080;">Jan 30,2020</span></p>
+                <h4>Top 10 sneaker accessories</h4>
+                <div class=" position-absolute detailsbox " >
+                
+                    <a href="https://faraday-template.webflow.io/blog-posts/top-10-sneaker-accessories" class=" bg-white text-decoration-none d-block but w-but rounded text-center text-dark p-3  linkpositio " style="width:180px;">SHOP SPORT</a>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-3 col-lg-3 m-2   position-relative">
+                <img id="imag3" src="https://assets.website-files.com/6039bc1873bb835a32df6639/6039bc1873bb834ee9df6665_60365c36b2becc026f59e57c_post-3-thumb.jpeg" loading="lazy" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 64vw, (max-width: 991px) 31vw, 28vw" srcset="https://assets.website-files.com/6039bc1873bb835a32df6639/6039bc1873bb834ee9df6665_60365c36b2becc026f59e57c_post-3-thumb-p-800.jpeg 800w, https://assets.website-files.com/6039bc1873bb835a32df6639/6039bc1873bb834ee9df6665_60365c36b2becc026f59e57c_post-3-thumb.jpeg 800w" class="post-thumbnail" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                <p class="fw-600 mt-3" style="font-size:13px;">SALE <span style="font-size:13px; color:#808080;">Dec 25,2020</span></p>
+                <h4 class="post-card-heading fw-bold">Explore the outdoors with the new Faraday Shoes</h4>
+                <div class=" position-absolute detailsbox text-center">
+
+                    <a href="https://faraday-template.webflow.io/blog-posts/explore-the-outdoors-with-the-new-faraday-shoes" class=" bg-white text-decoration-none d-block but w-but rounded text-center text-dark p-3  linkpositio " style="width:180px;">SHOP SPORT</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--<div class="container my-5">
+        <div class="row">
+            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 d-flex align-items-stretch">-->
+    <!-- Card -->
+    <!--<div class="bg-image card shadow-1-strong ">
+        <div class="card-body ">
+        </div>
+    </div>-->
+    <!-- Card -->
+    <!--</div>
+
+    <div class="col-lg-4 mb-4 mb-lg-0 d-flex align-items-stretch">-->
+    <!-- Card -->
+    <!--<div class="bg-image card shadow-1-strong ">
+        <div class="card-body ">
+        </div>
+    </div>-->
+    <!-- Card -->
+    <!--</div>
+
+    <div class="col-lg-4 mb-4 mb-lg-0 d-flex align-items-stretch">-->
+    <!-- Card -->
+    <!--<div class="bg-image card shadow-1-strong">
+        <div class="card-body ">
+
+        </div>
+    </div>-->
+    <!-- Card -->
+    <!--</div>
+        </div>
+    </div>-->
+
+
+    <!--footer-->
+    <section class="h-10000" style=" background-color:black; ">
+        <div class="container  border-bottom ">
+            <nav class="navbar navbar-expand-md navbar-light  m-0  p-5" style="background-color: black; ">
+                <a href="projectpage.html" class="navbar-brand text-white">FARADAY.SHOSE</a>
+                <div class=" navbar g-0">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item"><a class="nav-link text-white linkcolor" href="#">SHOP</a></li>
+                        <li class="nav-item"><a class="nav-link text-white linkcolor" href="#">GUARANTEE</a></li>
+                        <li class="nav-item"><a class="nav-link text-white linkcolor" href="#">SHOPPING & RETURNS</a></li>
+                        <li class="nav-item"><a class="nav-link text-white linkcolor" href="#">BLOG</a></li>
+                        <li class="nav-item"><a class="nav-link text-white linkcolor" href="#">ABOUT</a></li>
+                    </ul>
+                </div>
+                <div class=" d-flex mt-3 ms-auto">
+                    <p style="color:#808080;">
+                        Be a part of our community
+                    </p>
+                    <i class='bx bxl-instagram-alt fs-4 ps-3' style='color:rgba(255,255,255,0.86)'></i>
+                    <i class='bx bxl-facebook-square  fs-3 px-3' style='color:rgba(255,255,255,0.86)'></i>
+                    <i class='bx bxl-youtube fs-2' style='color:rgba(255,255,255,0.86)'></i>
+                </div>
+            </nav>
+        </div>
+
+
+        <!--<!border bottom-->-->
+
+
+        <div style="height:55px"></div>
+        <div class="container text-white">
+            <div class="row">
+                <div class="col-lg-5">
+                    <h3>
+                        <b> <q>We made passion our raw material</q></b>
+                    </h3>
+                    <p>Pellentesque interdum est lobortis purus porttitor fermentum. Vivamus suscipit diam eros, vel faucibus eros laoreet a. Donec porta ipsum viverra dignissim facilisis. Sed id accumsan ex. Curabitur imperdiet ipsum ac blandit faucibus. Etiam ullamcorper consequat tincidunt. Fusce nulla nibh, euismod at quam eget, venenatis convallis libero. Mauris ultricies et dolor eget cursus.</p>
+                    <a href="#" class="text-decoration-none text-white">READ MORE</a>
+                </div>
+                <div class="col-lg-3"></div>
+                <div class="col-lg-4">
+                    <p>Sign up to our newsletter and get 10% off this purchase</p>
+                    <div class="input-group mb-3 py-4 px-4 ">
+                        <input type="text" class="form-control  bg-dark  text-white " placeholder="YUOR FMAIL ADRESS" aria-label="Recipient's username" aria-describedby="button-addon2 " required>
+                        <!--<input type="submit" value="GET 1=% OFF" class="w-but text-dark btn-outline-danger py-2" style="border:none;" />-->
+                        <!--<button class="btn  btn-outline-danger ff" type="button" id="button-addon2">GET 1=% OFF</button>-->
+                        <a href="#" class=" bg-white text-decoration-none d-block but w-but text-center text-dark p-2  links" style="width:120px;">GET 1=% OFF</a>
+
+
+                    </div>
+                    <!--<form>
+                    <input type="text" class="form-control  bg-dark  text-white" required="required" placeholder="YOUR EMAIL ADDRSS " aria-label="Recipient's username" aria-describedby="button-addon2 ">
+                    <button class="btn btn-outline-secondary bg-white  text-dark ff" type="button" id="button-addon2">GET 1=% OFF</button>
+                                    </form>-->
+                    <p>
+                        Created with <i class='bx bxs-heart' style='color:rgba(236,13,17,0.86)'></i> by Elastic Themes . Copyright © All Rights Reserved
+                        &nbsp;  Powered by Webflow    Style Guide    Licenses    Instructions
+                    </p>
+                    <div style="padding:10%; background-color:black;"></div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
